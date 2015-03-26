@@ -8,7 +8,7 @@ int main()
 	int n =10000;
 	bool p;
 	int i ;
-	
+	    
 	start = clock();
 #pragma omp parallel for
 		for (i = 1; i < n ; i++)
