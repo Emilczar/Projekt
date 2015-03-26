@@ -5,7 +5,7 @@
 int main()
 {
 	clock_t start, stop;
-	int n =100000000;
+	int n =10000;
 	bool p;
 	int i ;
 	
@@ -13,9 +13,9 @@ int main()
 #pragma omp parallel for
 		for (i = 1; i < n ; i++)
 		{
-			p = true;
+		p = true;
 
-			for (int j = 2; j < i; j++)
+		for (int j = 2; j < i; j++)
 		if (i % j == 0)
 				p = false;
 			if (p == true)
