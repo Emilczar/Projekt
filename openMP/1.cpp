@@ -5,7 +5,9 @@
 int main()
 {
 	clock_t start, stop;
-	int n =10000;
+	int n = 10000;
+	int  tab[10000];
+	int licznik = 0;
 	bool p;
 	int i ;
 	    
@@ -16,11 +18,16 @@ int main()
 		p = true;
 
 		for (int j = 2; j < i; j++)
+		{	
 		if (i % j == 0)
 				p = false;
+		}
 			if (p == true)
-				printf("%d\n", i);
 
+				
+			#pragma omp critical
+			//printf("%d w: %d\n", i, omp_get_thread_num());
+			tab[licznik++] = i;
 
 		}
 	
