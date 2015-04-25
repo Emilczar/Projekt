@@ -5,8 +5,8 @@
 int main()
 {
 	clock_t start, stop;
-	int n = 10000;
-	int  tab[10000];
+	int n = 100;
+	int  tab[100];
 	int licznik = 0;
 	bool p;
 	int i ;
@@ -21,16 +21,20 @@ int main()
 		{	
 		if (i % j == 0)
 				p = false;
+				//goto nextIteration;
+				
 		}
+		nextIteration:
 			if (p == true)
 
 				
 			#pragma omp critical
-			//printf("%d w: %d\n", i, omp_get_thread_num());
+			printf("%d w: %d\n", i, omp_get_thread_num());
 			tab[licznik++] = i;
 
 		}
 	
 	stop = clock();
+
 	printf("Czas przetwarzania wynosi %f sekund\n",((double)(stop - start)/1000.0));
 }
